@@ -12,15 +12,15 @@ $ pip install docopt elasticsearch
 ```
 
 Configure Elasticsearch to bind on all available interfaces (or as specific interface, but that's not covered below):
-
-Edit: /etc/elasticsearch/elasticsearch.yml to read following:
+#network.host: 192.168.0.1
+Edit: **/etc/elasticsearch/elasticsearch.yml** to read following:
 ```sh
 network.host: 0.0.0.0
 ```
 
 Instead of the default, which is:
 ```sh
-network.host: 127.0.0.1
+# network.host: 192.168.0.1
 ```
 
 ## Examples
@@ -49,6 +49,12 @@ $ check_elasticsearch.py --host <host> --filter <query> --warning <warning> --cr
 $ check_elasticsearch.py --host "http://<elasticsearch ip>:9200/" --filter "some_saved_filter_in_kibana" --warning 1 --critical 2
 ```
 
+### Example output
+
+```sh
+$ check_elasticsearch.py --host "http://<elastic ip>:9200" --filter "ssh_sessions_initiated_last24h" --warning 200 --critical 400
+WARNING - Total hits: 264 | hits=264
+```
 
 ## Contributions
 Thanks goes to these wonderful people:
