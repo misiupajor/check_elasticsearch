@@ -31,12 +31,12 @@ The plugin allows you to fetch logs matching either a **query** or a **filter**.
 Retrieve a count that matches a **query** with syntax example:
 
 ```sh
-check_elasticsearch.py --host <host> --index <index> --query <query> --warning <warning> --critical <critical>
+$ check_elasticsearch.py --host <host> --index <index> --query <query> --warning <warning> --critical <critical>
 ```
 
 **Query example** using the query mode:
 ```sh
-check_elasticsearch.py --host "http://<elasticsearch ip>:9200/" --index "filebeat-*" --query "system_process_id=148" --warning 1 --critical 2
+$ check_elasticsearch.py --host "http://<elasticsearch ip>:9200/" --index "filebeat-*" --query "system_process_id=148" --warning 1 --critical 2
 ```
 
 Retrieve a count matching a saved _Kibana_ filter with syntax example:
@@ -84,8 +84,7 @@ check_elasticsearch.py --host "http://<elastic ip>:9200/" --filter "some_saved_f
 
 ```
 
-
 ## Contributions
 Thanks goes to these wonderful people:
 
-* Oskar Rittsel ([@OP5](https://www.op5.com))
+* Oskar Rittsél ([@OP5](https://www.op5.com))
