@@ -20,7 +20,7 @@
 
 
 """
-__author__ = 'Misiu Pajor, op5 AB'
+__author__ = 'Misiu Pajor, OP5 AB'
 __date__ = '2017-10-02'
 __version__ = '0.6.2'
 
@@ -41,7 +41,7 @@ except ImportError as missing:
         '"# pip install docopt elasticsearch"')
     exit(3)
 
-class OP5ESLog(object):
+class ElasticAPI(object):
     def __init__(self):
         self.args = docopt(__doc__, version=None)
         self.url = self.args["<host>"]
@@ -103,9 +103,9 @@ class OP5ESLog(object):
         exit(exit_code)
 
 if __name__ == '__main__':
-    eslog = OP5ESLog()
-    if eslog.args["--query"]:
-        count = eslog.get_query(eslog.args["<query>"], eslog.args["<index>"])
-    if eslog.args["--filter"]:
-        count = eslog.get_filter(eslog.args["<query>"])
-    eslog._exit_state(count)
+    elastic = ElasticAPI()
+    if elastic.args["--query"]:
+        count = elastic.get_query(elastic.args["<query>"], elastic.args["<index>"])
+    if elastic.args["--filter"]:
+        count = elastic.get_filter(elastic.args["<query>"])
+    elastic._exit_state(count)
