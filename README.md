@@ -53,7 +53,7 @@ $ check_elasticsearch.py --host "http://<elasticsearch ip>:9200/" --filter "some
 ### Example output
 
 ```sh
-$ check_elasticsearch.py --host "http://<elastic ip>:9200" --filter "ssh_sessions_initiated_last24h" --warning 200 --critical 400
+$ check_elasticsearch.py --host "http://<elastic ip>:9200" --filter "some_saved_filter_in_kibana" --warning 200 --critical 400
 WARNING - Total hits: 264 | hits=264
 ```
 
