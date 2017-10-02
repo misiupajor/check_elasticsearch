@@ -15,8 +15,8 @@
         CRITICAL Threshold as integer. eg. 299
 
     Examples:
-         check_elasticsearch.py --host "http://172.27.76.151:9200/" --index "filebeat-*" --query "system_process_id=148" --warning 1 --critical 2
-         check_elasticsearch.py --host "http://172.27.76.151:9200/" --filter "some_saved_filter_in_kibana" --warning 1 --critical 2
+         check_elasticsearch.py --host "http://<elastic ip>:9200/" --index "filebeat-*" --query "system_process_id=148" --warning 1 --critical 2
+         check_elasticsearch.py --host "http://<elastic ip>:9200/" --filter "some_saved_filter_in_kibana" --warning 1 --critical 2
 
 
 """
