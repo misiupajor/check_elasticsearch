@@ -88,3 +88,4 @@ check_elasticsearch.py --host "http://<elastic ip>:9200/" --filter "some_saved_f
 Thanks goes to these wonderful people:
 
 * Oskar Rittsél ([@OP5](https://www.op5.com))
+* Jörgen Bertholdsson ([@OP5](https://www.op5.com))
