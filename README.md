@@ -10,6 +10,10 @@ This plugin is compatible with Elasticsearch 5.x, Nagios / Naemon, but also OP5'
 Python dependencies that are required can be installed as follows:
 ```sh
 $ yum install python-docopt python-elasticsearch
+or
+$ apt install python-docopt python-elasticsearch
+
+Depending on your packat manager and OS
 ```
 
 Configure Elasticsearch to bind on all available interfaces (or as specific interface, but that's not covered below):
