@@ -38,7 +38,8 @@ except ImportError as missing:
     print (
         'Error - could not import all required Python modules\n"%s"'
         % missing + '\nDependency installation with pip:\n'
-        '"# pip install docopt elasticsearch"')
+        '"# pip install docopt elasticsearch"'
+        'or use your prefered package manage, i.e. APT or YUM.\n Example: yum install python-docopt python-elasticsearch')
     exit(3)
 
 class ElasticAPI(object):
