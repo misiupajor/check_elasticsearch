@@ -13,7 +13,9 @@ $ yum install python-docopt python-elasticsearch
 or
 $ apt install python-docopt python-elasticsearch
 
-Depending on your packat manager and OS
+Obviously, dependent on what package manager you use.
+_Read more on python-elasticsearch: https://github.com/elastic/elasticsearch-py/
+
 ```
 
 Configure Elasticsearch to bind on all available interfaces (or as specific interface, but that's not covered below):
