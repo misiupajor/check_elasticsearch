@@ -14,7 +14,7 @@ or
 $ apt install python-docopt python-elasticsearch
 
 Obviously, dependent on what package manager you use.
-_Read more on python-elasticsearch: https://github.com/elastic/elasticsearch-py/
+[Read more on: python-elasticsearch](https://github.com/elastic/elasticsearch-py/)
 
 ```
 
