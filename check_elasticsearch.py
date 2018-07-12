@@ -4,7 +4,7 @@
     check_elasticsearch.py --host <host> --filter <query> --warning <warning> --critical <critical>
 
 Options:
-    --host      Endpoint to Elasticsearch, eg. http://<ip>:<port>.
+    --host      Endpoint to Elasticsearch, eg. http://<ip>:<port>. Logging in with user/password: http://<username>:<password>@<ip>:<port>
     --Index     Elastic index to use, eg. rsyslog-* or filebeat-*. Use _all to search all indexes (more resource intensive).
     --query     Raw Elastic/Lucene query, eg. "received_from=10.0.5.2 and program=systemd and host=10.0.5.10 and @timestamp: [now-5h TO now]".
     --filter    Name of saved filter in Kibana, its index will be used automatically.
