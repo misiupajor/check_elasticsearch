@@ -3,7 +3,7 @@
 This plugin aims to monitor queries in Elasticsearch by allowing you to run a raw query on a _specific_ or _all_ indexes, or call a saved filter in Kibana.
 The data returned will be a count (integer) and will also be graphed accordingly. It's intention is to graph counts (=matches) based on query/filter you define.
 
-This plugin is compatible with Elasticsearch 5.x, Nagios / Naemon, but also OP5's broadend offering: OP5 Log Analytics.
+This plugin is compatible with Elasticsearch 5.x, Nagios / Naemon.
 
 ## Installation
 
