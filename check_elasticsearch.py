@@ -97,15 +97,20 @@ class ElasticAPI(object):
             exit("Error: Exception: {0}".format(error))
         if count["count"] is not None:
             if count["count"] != 0:
-                latest_log = self.es.search(index=self.args["<index>"], body={"query":{"query_string":{"query":query}},"sort":[{"timestamp":{"order":"desc"}}]}, size=1)
+                latest_log = self.es.search(index=self.args["<index>"], body={"query":{"query_string":{"query":query}},"sort":[{"@timestamp":{"order":"desc"}}]}, size=1)
                 try:
-                    latest_message = [ latest_log['hits']['hits'][0]['_source'][msgkey][:int(msgchars)] , latest_log['hits']['hits'][0]['_source'][srckey] ]
+                    for key in msgkey.split("."):
+                        if not 'latest_message' in locals():
+                            latest_message=latest_log['hits']['hits'][0]['_source'][key]
+			else:
+				latest_message=latest_message[key]
                 except KeyError:
                     print("Error: msgkey " + msgkey + " does not exist. These msgkeys are available:")
                     for i in latest_log['hits']['hits'][0]['_source']:
                         print(i)
                     exit(3)
-                return count["count"], latest_message
+                msg = [ latest_message, latest_log['hits']['hits'][0]['_index'] ]
+                return count["count"], msg
             return count["count"]
         exit("Error: Query did not return any count data.")
 
@@ -116,7 +121,7 @@ class ElasticAPI(object):
         if count >= critical:
             if 'latest_message' in globals() or 'latest_message' in locals():
                 message = "CRITICAL - Total hits: {0} - Last message from: {2} [ {1} ] | hits={0}".format(count,\
-                                                                           latest_message[0].encode('utf8'), latest_message[1].encode('utf8'))
+                                                                           latest_message[0].encode('utf-8'), latest_message[1].encode('utf-8'))
             else:
                 message = message = "CRITICAL - Total hits: {0} | hits={0}".format(count)
             exit_code = 2
