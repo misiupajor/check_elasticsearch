@@ -102,8 +102,8 @@ class ElasticAPI(object):
                     for key in msgkey.split("."):
                         if not 'latest_message' in locals():
                             latest_message=latest_log['hits']['hits'][0]['_source'][key]
-			else:
-				latest_message=latest_message[key]
+                        else:
+                            latest_message=latest_message[key]
                 except KeyError:
                     print("Error: msgkey " + msgkey + " does not exist. These msgkeys are available:")
                     for i in latest_log['hits']['hits'][0]['_source']:
